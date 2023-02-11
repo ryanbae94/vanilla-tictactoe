@@ -21,7 +21,8 @@ const checkWinner = () => {
     const rowMarks = Array.from(tdsInRow).map((td) => td.textContent);
     const allMarksSame = rowMarks.every((mark) => mark === rowMarks[0]);
     if (allMarksSame && rowMarks[0] !== "") {
-      alert(`${player} 의 승리 => 가로방향`);
+      const winningPlayer = player === "O" ? "X" : "O";
+      alert(`${winningPlayer} 의 승리 => 가로방향`);
       resetGame();
       return;
     }
@@ -36,7 +37,8 @@ const checkWinner = () => {
     ];
     const allMarksSame = columnMarks.every((mark) => mark === columnMarks[0]);
     if (allMarksSame && columnMarks[0] !== "") {
-      alert(`${player} 의 승리 => 세로방향`);
+      const winningPlayer = player === "O" ? "X" : "O";
+      alert(`${winningPlayer} 의 승리 => 세로방향`);
       resetGame();
       return;
     }
@@ -52,7 +54,8 @@ const checkWinner = () => {
     (mark) => mark === leftDiagonalMarks[0]
   );
   if (leftDiagonalMarksSame && leftDiagonalMarks[0] !== "") {
-    alert(`${player} 의 승리 => 좌 대각선방향`);
+    const winningPlayer = player === "O" ? "X" : "O";
+    alert(`${winningPlayer} 의 승리 => 대각선(좌)방향`);
     resetGame();
     return;
   }
@@ -67,7 +70,8 @@ const checkWinner = () => {
     (mark) => mark === rightDiagonalMarks[0]
   );
   if (rightDiagonalMarksSame && rightDiagonalMarks[0] !== "") {
-    alert(`${player} 의 승리 => 우 대각성방향`);
+    const winningPlayer = player === "O" ? "X" : "O";
+    alert(`${winningPlayer} 의 승리 => 대각선(우)방향`);
     resetGame();
     return;
   }
