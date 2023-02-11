@@ -10,8 +10,8 @@ const marking = (e) => {
     return;
   }
   target.textContent = player;
-  checkWinner();
   player = player === "X" ? "O" : "X";
+  checkWinner();
 };
 
 const checkWinner = () => {
