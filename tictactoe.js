@@ -11,7 +11,7 @@ const marking = (e) => {
   }
   target.textContent = player;
   player = player === "X" ? "O" : "X";
-  checkWinner();
+  setTimeout(() => checkWinner(), 0);
 };
 
 const checkWinner = () => {
